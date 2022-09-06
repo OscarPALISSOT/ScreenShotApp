@@ -1,4 +1,5 @@
 <?php
+include('ScreenshotMachine.php');
 
 $customer_key = "PUT_YOUR_CUSTOMER_KEY_HERE";
 $secret_phrase = ""; //leave secret phrase empty, if not needed

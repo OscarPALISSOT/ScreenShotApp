@@ -1,0 +1,42 @@
+html, body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+p, h1, h2, h3, h4, a, span, input{
+    font-family: 'Poppins', sans-serif;
+    color: rgb(14, 14, 14);
+}
+
+body {
+    background-color: #f7f7f7;
+}
+
+h1{
+    font-size: 3em;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 1.75em;
+    font-weight: bold;
+}
+
+.mainTitle{
+    margin: 1.5em;
+    text-align: center;
+}
+
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1700px) {}

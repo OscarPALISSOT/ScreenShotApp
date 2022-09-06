@@ -2,7 +2,6 @@
 
 require_once ("ScreenshotMachine.php");
 
-
 $customer_key = "d0c274";
 $secret_phrase = ""; //leave secret phrase empty, if not needed
 

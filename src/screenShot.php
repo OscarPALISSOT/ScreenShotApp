@@ -1,6 +1,8 @@
 <?php
 
-$customer_key = "PUT_YOUR_CUSTOMER_KEY_HERE";
+require_once ("ScreenshotMachine.php");
+
+$customer_key = "d0c274";
 $secret_phrase = ""; //leave secret phrase empty, if not needed
 
 $machine = new ScreenshotMachine($customer_key, $secret_phrase);
@@ -9,9 +11,9 @@ $machine = new ScreenshotMachine($customer_key, $secret_phrase);
 $options['url'] = "https://www.google.com";
 
 // all next parameters are optional, see our website screenshot API guide for more details
-$options['dimension'] = "1366x768";  // or "1366xfull" for full length screenshot
+$options['dimension'] = "1920x1080";
 $options['device'] = "desktop";
-$options['format'] = "png";
+$options['format'] = "jpg";
 $options['cacheLimit'] = "0";
 $options['delay'] = "200";
 $options['zoom'] = "100";

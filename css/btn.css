@@ -4,7 +4,7 @@
     background-color: #5c88da;
     border-radius: 0.5rem;
     margin: 0.5em 0;
-    font-size: 22px;
+    font-size: 40px;
     font-weight: 500;
     color: white;
     text-justify: none;
@@ -17,4 +17,11 @@
     box-shadow: inset 2px 4px 3px rgba(0, 0, 0, 0.1);
     transition: background-color ease-out 0.15s;
     cursor: pointer;
+}
+
+
+.btn img{
+    vertical-align: bottom;
+    height: 48px;
+    width: 48px;
 }

@@ -2,23 +2,28 @@
 
 require_once ("ScreenshotMachine.php");
 
+
 $customer_key = "d0c274";
 $secret_phrase = ""; //leave secret phrase empty, if not needed
 
-$machine = new ScreenshotMachine($customer_key, $secret_phrase);
 
-//mandatory parameter
-$options['url'] = htmlspecialchars($_GET["url1"]);
+function TakeScreenShot($customer_key, $secret_phrase, $Url) {
+    $machine = new ScreenshotMachine($customer_key, $secret_phrase);
 
-// all next parameters are optional, see our website screenshot API guide for more details
-$options['dimension'] = "1920x1080";
-$options['device'] = "desktop";
-$options['format'] = "jpg";
-$options['cacheLimit'] = "0";
-$options['delay'] = "200";
-$options['zoom'] = "100";
+    //mandatory parameter
+    $options['url'] = $Url;
 
-$api_url = $machine->generate_screenshot_api_url($options);
+    // all next parameters are optional, see our website screenshot API guide for more details
+    $options['dimension'] = "1920x1080";
+    $options['device'] = "desktop";
+    $options['format'] = "jpg";
+    $options['cacheLimit'] = "0";
+    $options['delay'] = "200";
+    $options['zoom'] = "100";
+    $api_url = $machine->generate_screenshot_api_url($options);
+    $data = array("content" => '<img src="' . $api_url . '">' . PHP_EOL);
+    echo json_encode($data);
+}
 
-//put link to your html code
-echo '<img src="' . $api_url . '">' . PHP_EOL;
+
+TakeScreenShot($customer_key, $secret_phrase, htmlspecialchars($_GET['url1']));

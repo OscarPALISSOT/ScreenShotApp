@@ -26,4 +26,4 @@ function TakeScreenShot($customer_key, $secret_phrase, $Url) {
 }
 
 
-echo TakeScreenShot($customer_key, $secret_phrase, htmlspecialchars($_GET['url1']));
+TakeScreenShot($customer_key, $secret_phrase, htmlspecialchars($_GET['url1']));

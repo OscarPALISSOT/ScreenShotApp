@@ -17,7 +17,7 @@ form.addEventListener( 'submit', e => {
         alert('Please, fill all the URLs.');
         return;
     }
-    $('.container').html(null);
+    $('.container').html('test');
     let formData = new FormData(form)
     console.log(formData);
     $.ajax({
@@ -29,9 +29,9 @@ form.addEventListener( 'submit', e => {
         success: function(data, status)
         {
             console.log(data)
-            let html = '<h2>' + data.content + '</h2>';
+            let html = data.content;
 
-            $('#ajax-modal').html(html);
+            $('.container').html('fini');
         },
         error: function (xhr, ajaxOptions, thrownError)
         {

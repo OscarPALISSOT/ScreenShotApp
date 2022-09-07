@@ -1,8 +1,14 @@
 
-
+const urls = document.getElementsByClassName('urlInput');
 /*
+for( let i = 0; i<urls.length; i++){
+    if (urls[i].value !== ''){
+        alert(urls[i].getAttribute(name))
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
-    alert('Enter your name');
+    debugger
 });
 
 

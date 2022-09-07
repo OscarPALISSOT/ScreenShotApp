@@ -14,30 +14,25 @@ form.addEventListener( 'submit', e => {
         }
     }
     if (missingUrl){
-        alert('Please, fill all the URLs.');
-        return;
+        //alert('Please, fill all the URLs.');
+        //return;
     }
-    $('.container').html('test');
-    let formData = new FormData(form)
-    console.log(formData);
+    let formData = $(form).serializeArray();
     $.ajax({
         url: form.getAttribute('action'),
         type: form.getAttribute('method'),
-        processData: false,
-        contentType: false,
-        data: formData,
+        data : { 'url1' : 'https://stackoverflow.com/'},
         success: function(data, status)
         {
             console.log(data)
             let html = data.content;
 
-            $('.container').html('fini');
         },
         error: function (xhr, ajaxOptions, thrownError)
         {
-            $('.loading').html(null);
-            $('#ajax-modal').html('Error: ' + xhr.status);
+            $('.container').html('Error: ' + xhr.status);
             console.log(thrownError);
         }
     })
 })
+

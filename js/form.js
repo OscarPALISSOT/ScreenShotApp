@@ -1,26 +1,21 @@
 
 const urls = document.getElementsByClassName('urlInput');
-/*
-for( let i = 0; i<urls.length; i++){
-    if (urls[i].value !== ''){
-        alert(urls[i].getAttribute(name))
-    }
-}
+const form = document.querySelector('form');
 
-document.addEventListener("DOMContentLoaded", function() {
-    debugger
-});
+document.getElementsByClassName('submitUrls');
 
 
-
-$(document).ready(function() {
-    $('#submit').click(function() {
-        var value = document.getElementById('name').value;
-        if (value === '') {
-            alert('Enter your name');
+form.addEventListener( 'submit', e => {
+    e.preventDefault();
+    let missingUrl = false;
+    for (let i = 0; i < urls.length; i++){
+        if ( urls[i].value === ''){
+            missingUrl = true;
         }
-    })
-});
-
-
- */
+    }
+    if (missingUrl){
+        alert('Please, fill all the URLs.');
+        return;
+    }
+    alert('submit')
+})

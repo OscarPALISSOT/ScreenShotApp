@@ -30,11 +30,7 @@ span{
     border-bottom: solid 4px #2d61c2 ;
     outline: none;
 }
-.input__field:focus + .input__label{
-    transform: translate(-1em, -150%) scale(0.8);
-}
-
-.input__field:not(:placeholder-shown)+ .input__label{
+.input__field:focus + .input__label, .input__field:not(:placeholder-shown)+ .input__label{
     transform: translate(-1em, -150%) scale(0.8);
 }
 

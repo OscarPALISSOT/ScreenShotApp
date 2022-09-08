@@ -7,7 +7,7 @@ if (php_sapi_name() != 'cli') {
 }
 */
 use Google\Client;
-use Google\Service\Drive;
+
 
 /**
  * Returns an authorized API client.
@@ -17,7 +17,7 @@ function getClient()
 {
     $client = new Client();
     $client->setApplicationName('Google Drive API PHP Quickstart');
-    $client->setScopes('https://www.googleapis.com/auth/drive.metadata.readonly');
+    $client->setScopes('https://www.googleapis.com/auth/drive');
     $client->setAuthConfig('credentials.json');
     $client->setAccessType('offline');
     $client->setPrompt('select_account consent');
@@ -68,25 +68,4 @@ function getClient()
         echo 'Some error occured: '.$e->getMessage();
     }
     return $client;
-}
-
-
-// Get the API client and construct the service object.
-$client = getClient();
-$service = new Drive($client);
-
-// Print the names and IDs for up to 10 files.
-$optParams = array(
-    'pageSize' => 3,
-    'fields' => 'nextPageToken, files(id, name)'
-);
-$results = $service->files->listFiles($optParams);
-
-if (count($results->getFiles()) == 0) {
-    print "No files found.\n";
-} else {
-    print "Files:\n";
-    foreach ($results->getFiles() as $file) {
-        printf("%s (%s)\n", $file->getName(), $file->getId());
-    }
 }

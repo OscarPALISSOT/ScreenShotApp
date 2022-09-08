@@ -1,2 +1,7 @@
 ### phpstorm files ###
 /.idea
+
+
+### composer libraries ###
+
+./vendor

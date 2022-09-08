@@ -8,6 +8,7 @@ $secret_phrase = ""; //leave secret phrase empty, if not needed
 $url = htmlspecialchars($_GET['url1']);
 
 function TakeScreenShot($customer_key, $secret_phrase, $Url) {
+
     $machine = new ScreenshotMachine($customer_key, $secret_phrase);
 
     //mandatory parameter
@@ -25,6 +26,4 @@ function TakeScreenShot($customer_key, $secret_phrase, $Url) {
     return json_encode($data);
 }
 
-//TakeScreenShot($customer_key, $secret_phrase, $url);
-
-echo $url;
+echo TakeScreenShot($customer_key, $secret_phrase, $url);

@@ -1,11 +1,12 @@
 
 const urls = document.getElementsByClassName('urlInput');
 const form = document.querySelector('form');
+const response = document.querySelector('.response');
 
 document.getElementsByClassName('submitUrls');
 
-
 form.addEventListener( 'submit', e => {
+    form.style.display = 'none';
     e.preventDefault();
     let missingUrl = false;
     for (let i = 0; i < urls.length; i++){
@@ -21,11 +22,14 @@ form.addEventListener( 'submit', e => {
     $.ajax({
         url: form.getAttribute('action'),
         type: form.getAttribute('method'),
-        data : { 'url1' : 'https://stackoverflow.com/'},
+        data : formData,
+        dataType : 'json',
         success: function(data, status)
         {
-            console.log(data)
-            let html = data.content;
+            console.log(data.content)
+            let html = 'test';
+            response.innerHTML = html + response.innerHTML;
+            response.style.display = 'block';
 
         },
         error: function (xhr, ajaxOptions, thrownError)

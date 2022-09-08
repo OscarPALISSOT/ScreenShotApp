@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/form.css">
     <link rel="stylesheet" href="./css/btn.css">
+    <link rel="stylesheet" href="./css/response.css">
 
     <link rel="icon" href="./assets/favicon.ico?v=2" type="image/x-icon">
 </head>
@@ -19,7 +20,8 @@
 
     <div class="container">
         <?php
-            include './html/form.html'
+            include './html/form.html';
+            include './html/response.html';
         ?>
     </div>
 
@@ -27,6 +29,7 @@
 
 <script src="./js/jQuery.js"></script>
 <script src="./js/form.js"></script>
+<script src="./js/response.js"></script>
 
 </body>
 </html>

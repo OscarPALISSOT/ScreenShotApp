@@ -1,10 +1,11 @@
 <?php
-require './vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
+/*
 if (php_sapi_name() != 'cli') {
     throw new Exception('This application must be run on the command line.');
 }
-
+*/
 use Google\Client;
 use Google\Service\Drive;
 
@@ -76,7 +77,7 @@ $service = new Drive($client);
 
 // Print the names and IDs for up to 10 files.
 $optParams = array(
-    'pageSize' => 10,
+    'pageSize' => 3,
     'fields' => 'nextPageToken, files(id, name)'
 );
 $results = $service->files->listFiles($optParams);

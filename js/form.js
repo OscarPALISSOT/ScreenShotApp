@@ -2,6 +2,7 @@
 const urls = document.getElementsByClassName('urlInput');
 const form = document.querySelector('form');
 const response = document.querySelector('.response');
+const responseContainer = document.querySelector('.responseContainer');
 
 document.getElementsByClassName('submitUrls');
 
@@ -28,7 +29,7 @@ form.addEventListener( 'submit', e => {
         {
             console.log(data.content)
             let html = 'test';
-            response.innerHTML = html + response.innerHTML;
+            responseContainer.innerHTML = html;
             response.style.display = 'block';
 
         },

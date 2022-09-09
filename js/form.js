@@ -16,8 +16,8 @@ form.addEventListener( 'submit', e => {
         }
     }
     if (missingUrl){
-        //alert('Please, fill all the URLs.');
-        //return;
+        alert('Please, fill all the URLs.');
+        return;
     }
     let formData = $(form).serializeArray();
     $.ajax({
@@ -27,8 +27,8 @@ form.addEventListener( 'submit', e => {
         dataType : 'json',
         success: function(data, status)
         {
-            console.log(data.content)
-            let html = data.content;
+            let html = '<a href="' + data[0] + '">' + data[0] +'</a><a href="' + data[1] + '">' + data[1] +'</a><a href="' + data[2] + '">' + data[2] +'</a><a href="' + data[3] + '">' + data[3] +'</a><a href="' + data[4] + '">' + data[4] +'</a>';
+
             responseContainer.innerHTML = html;
             response.style.display = 'block';
 

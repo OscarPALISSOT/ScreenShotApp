@@ -6,7 +6,7 @@ require_once "googleAPI.php";
 use Google\Service\Drive;
 
 # TODO - PHP client currently chokes on fetching start page token
-function uploadBasic($fileToUpload){
+function upload($fileToUpload){
     try {
         $client = getClient();
         $client->addScope(Drive::DRIVE);

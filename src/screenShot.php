@@ -3,11 +3,6 @@
 require_once ("ScreenshotMachine.php");
 require_once ("upload.php");
 
-
-$customer_key = "d0c274";
-$secret_phrase = ""; //leave secret phrase empty, if not needed
-$url = htmlspecialchars($_GET['url1']);
-
 function TakeScreenShot($customer_key, $secret_phrase, $Url) {
 
     $machine = new ScreenshotMachine($customer_key, $secret_phrase);
@@ -23,13 +18,5 @@ function TakeScreenShot($customer_key, $secret_phrase, $Url) {
     $options['delay'] = "200";
     $options['zoom'] = "100";
     $api_url = $machine->generate_screenshot_api_url($options);
-    $data = array("content" => '<img src="' . $api_url . '">');
-    return json_encode($data);
+    return $api_url;
 }
-
-echo TakeScreenShot($customer_key, $secret_phrase, $url);
-
-
-$output_file = 'output.png';
-file_put_contents($output_file, file_get_contents($api_url));
-echo 'Screenshot saved as ' . $output_file . PHP_EOL;

@@ -7,7 +7,6 @@ const responseContainer = document.querySelector('.responseContainer');
 document.getElementsByClassName('submitUrls');
 
 form.addEventListener( 'submit', e => {
-    form.style.display = 'none';
     e.preventDefault();
     let missingUrl = false;
     for (let i = 0; i < urls.length; i++){
@@ -19,6 +18,7 @@ form.addEventListener( 'submit', e => {
         alert('Please, fill all the URLs.');
         return;
     }
+    form.style.display = 'none';
     let formData = $(form).serializeArray();
     $.ajax({
         url: form.getAttribute('action'),
@@ -27,7 +27,7 @@ form.addEventListener( 'submit', e => {
         dataType : 'json',
         success: function(data, status)
         {
-            let html = '<a href="' + data[0] + '">' + data[0] +'</a><a href="' + data[1] + '">' + data[1] +'</a><a href="' + data[2] + '">' + data[2] +'</a><a href="' + data[3] + '">' + data[3] +'</a><a href="' + data[4] + '">' + data[4] +'</a>';
+            let html = '<a target="_blank" rel="noopener noreferrer" href="' + data[0] + '">' + data[0] +'</a><a target="_blank" rel="noopener noreferrer" href="' + data[1] + '">' + data[1] +'</a><a target="_blank" rel="noopener noreferrer" href="' + data[2] + '">' + data[2] +'</a><a target="_blank" rel="noopener noreferrer" href="' + data[3] + '">' + data[3] +'</a><a target="_blank" rel="noopener noreferrer" href="' + data[4] + '">' + data[4] +'</a>';
 
             responseContainer.innerHTML = html;
             response.style.display = 'block';

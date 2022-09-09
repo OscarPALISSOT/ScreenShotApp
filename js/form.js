@@ -28,7 +28,7 @@ form.addEventListener( 'submit', e => {
         success: function(data, status)
         {
             console.log(data.content)
-            let html = 'test';
+            let html = data.content;
             responseContainer.innerHTML = html;
             response.style.display = 'block';
 

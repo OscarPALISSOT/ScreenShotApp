@@ -18,11 +18,8 @@ function uploadBasic($fileToUpload){
         $file = $driveService->files->create($fileMetadata, array(
             'data' => $content,
             'fields' => 'id'));
-        printf("File ID: %s\n", $file->id);
-        printf("File url: %s\n", "https://drive.google.com/file/d/". $file->id . "/view");
+        return "https://drive.google.com/file/d/". $file->id . "/view";
     } catch(Exception $e) {
         echo "Error Message: ".$e;
     }
 }
-
-uploadBasic('a.jpg');

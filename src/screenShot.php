@@ -1,6 +1,7 @@
 <?php
 
 require_once ("ScreenshotMachine.php");
+require_once ("upload.php");
 
 
 $customer_key = "d0c274";
@@ -27,3 +28,8 @@ function TakeScreenShot($customer_key, $secret_phrase, $Url) {
 }
 
 echo TakeScreenShot($customer_key, $secret_phrase, $url);
+
+
+$output_file = 'output.png';
+file_put_contents($output_file, file_get_contents($api_url));
+echo 'Screenshot saved as ' . $output_file . PHP_EOL;

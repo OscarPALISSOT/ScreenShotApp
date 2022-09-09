@@ -15,12 +15,11 @@ function uploadBasic($fileToUpload){
         $fileMetadata = new Google_Service_Drive_DriveFile(array(
             'name' => 'test'));
         $content = file_get_contents($fileToUpload);
-        $mimeType=mime_content_type($fileToUpload);
         $file = $driveService->files->create($fileMetadata, array(
             'data' => $content,
-            'mimeType' => $mimeType,
             'fields' => 'id'));
         printf("File ID: %s\n", $file->id);
+        printf("File url: %s\n", "https://drive.google.com/file/d/". $file->id . "/view");
     } catch(Exception $e) {
         echo "Error Message: ".$e;
     }

@@ -22,7 +22,7 @@ span{
     border: none;
     border-bottom: solid 4px #5c88da ;
     margin: 1em 0;
-    width: 33vw;
+    width: 90vw;
     transition: border-bottom 0.15s ease-in-out;
 }
 .input__field:focus, .input__field:focus-visible{
@@ -43,4 +43,11 @@ span{
     background: transparent;
     transform: translateY(-50%);
     transition: transform 0.2s ease-in-out;
+}
+
+
+@media (min-width: 576px) {
+    .input__field{
+        width: 33vw;
+    }
 }
